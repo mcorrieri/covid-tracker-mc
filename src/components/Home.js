@@ -6,10 +6,14 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://randomfox.ca/floof/")
+    fetchFoxes();
+  }, []);
+
+  async function fetchFoxes() {
+    const response = await fetch("https://randomfox.ca/floof/")
       .then((res) => res.json())
       .then((data) => setCurrent(data));
-  }, []);
+  }
 
   return (
     <div className="home">
@@ -17,7 +21,9 @@ function Home() {
       <p>HOME</p>
       <img src={current.image} alt="fox" />
       <br></br>
-      <Button variant="outlined">Get a new fox!</Button>
+      <Button onClick={fetchFoxes} variant="outlined">
+        Get a new fox!
+      </Button>
     </div>
   );
 }
