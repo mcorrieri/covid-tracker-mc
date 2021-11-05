@@ -14,6 +14,8 @@ code {
 }
 
 .splash {
+  padding: 70px;
+  overflow: hidden;
   min-height: 100vh;
   color: whitesmoke;
   background-color: #281733;
@@ -25,5 +27,9 @@ code {
 }
 
 .splash-header {
-  margin-top: 0;
+  margin-top: 50px;
+}
+
+.github-link {
+  color: whitesmoke;
 }

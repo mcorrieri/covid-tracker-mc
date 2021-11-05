@@ -7,9 +7,17 @@ function Splash() {
     <div className="splash">
       <h1 className="splash-header">Welcome to COVID-Tracker</h1>
       <Link to="/">
-        <Button variant="contained">Enter</Button>
+        <Button color="primary" variant="contained">
+          Enter
+        </Button>
       </Link>
-      <p>Check out the github</p>
+      <br></br>
+      <a
+        className="github-link"
+        href="https://github.com/mcorrieri/covid-tracker-mc"
+      >
+        Check out the github
+      </a>
     </div>
   );
 }
