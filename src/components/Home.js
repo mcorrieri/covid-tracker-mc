@@ -11,7 +11,7 @@ function Home({ currentData }) {
   return (
     <div className="home">
       <h2 className="header">COVID TRACKER</h2>
-      <ul>{stateList}</ul>
+      <ul className="card-list">{stateList}</ul>
     </div>
   );
 }

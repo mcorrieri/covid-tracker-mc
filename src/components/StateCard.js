@@ -1,12 +1,18 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import { Button, CardActions, CardContent, Typography } from "@mui/material";
+import {
+  Button,
+  CardActions,
+  CardContent,
+  Grid,
+  Typography,
+} from "@mui/material";
 
 function StateList({ item }) {
   const { state, cases, date, deaths } = item;
   return (
-    <div>
-      <Card sx={{ maxWidth: 275, backgroundColor: "grey" }} variant="outlined">
+    <div className="cards">
+      <Card sx={{ maxWidth: 275 }} variant="outlined">
         <CardContent>
           <Typography color="GrayText" sx={{ fontSize: 20 }}>
             {state}
