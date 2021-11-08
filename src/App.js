@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Splash from "./components/Splash";
+import UsChart from "./components/UsChart";
+import NotFound from "./components/NotFound";
 
 function App() {
   const [currentData, setCurrentData] = useState([]);
@@ -31,14 +33,13 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path="/welcome" element={<Splash />}></Route>
+        <Route exact path="/USchart" element={<UsChart />}></Route>
         <Route
           exact
           path="/"
           element={<Home currentData={currentData} />}
         ></Route>
-        <Route path="*">
-          <h1>404</h1>
-        </Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </div>
