@@ -12,7 +12,7 @@ function StateList({ item }) {
   const { state, cases, date, deaths } = item;
   return (
     <div className="cards">
-      <Card sx={{ maxWidth: 275 }} variant="outlined">
+      <Card className="card" sx={{ maxWidth: 275 }} variant="outlined">
         <CardContent>
           <Typography color="GrayText" sx={{ fontSize: 20 }}>
             {state}
