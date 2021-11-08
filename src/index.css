@@ -49,3 +49,7 @@ code {
 .card {
   background-color: lightgrey !important;
 }
+
+.recharts-wrapper {
+  display: contents;
+}

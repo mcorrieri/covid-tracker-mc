@@ -1,12 +1,6 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import {
-  Button,
-  CardActions,
-  CardContent,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Button, CardActions, CardContent, Typography } from "@mui/material";
 
 function StateList({ item }) {
   const { state, cases, date, deaths } = item;
