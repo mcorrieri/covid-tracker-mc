@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path="/welcome" element={<Splash />}></Route>
-        <Route exact path="/USchart" element={<UsChart />}></Route>
+        <Route exact path="/uschart" element={<UsChart />}></Route>
         <Route
           exact
           path="/"

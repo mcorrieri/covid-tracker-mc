@@ -29,7 +29,7 @@ function UsChart() {
   );
 
   return (
-    <div>
+    <div className="chart">
       <h1>US COVID-19 Cases:</h1>
       <div className="uschart">{renderLineChart}</div>
     </div>
