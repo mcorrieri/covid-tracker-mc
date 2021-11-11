@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Splash from "./components/Splash";
 import UsChart from "./components/UsChart";
 import NotFound from "./components/NotFound";
+import StateChart from "./components/StateChart";
 
 function App() {
   const [currentData, setCurrentData] = useState([]);
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route exact path="/welcome" element={<Splash />}></Route>
         <Route exact path="/uschart" element={<UsChart />}></Route>
+        <Route exact path="/:id/state" element={<StateChart />}></Route>
         <Route
           exact
           path="/"
