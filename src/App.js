@@ -10,31 +10,38 @@ import StateChart from "./components/StateChart";
 
 function App() {
   const [currentData, setCurrentData] = useState([]);
+  const [usData, setUsData] = useState([]);
 
   useEffect(() => {
     fetchData();
+    fetchUStotal();
   }, []);
-
-  // async function fetchFoxes() {
-  //   const response = await fetch("https://randomfox.ca/floof/")
-  //     .then((res) => res.json())
-  //     .then((data) => setCurrentData(data));
-  // }
 
   async function fetchData() {
     const response = await fetch(
-      "https://disease.sh/v3/covid-19/nyt/states?lastdays=1"
+      "https://disease.sh/v3/covid-19/nyt/states?lastdays=2"
     )
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => setCurrentData(data));
   }
-  console.log(currentData);
+  // console.log(currentData);
+
+  async function fetchUStotal() {
+    const response = await fetch("https://disease.sh/v3/covid-19/nyt/usa")
+      .then((response) => response.json())
+      .then((data) => setUsData(data));
+  }
+  // console.log(usData);
 
   return (
     <div className="App">
       <Routes>
         <Route exact path="/welcome" element={<Splash />}></Route>
-        <Route exact path="/uschart" element={<UsChart />}></Route>
+        <Route
+          exact
+          path="/uschart"
+          element={<UsChart usData={usData} />}
+        ></Route>
         <Route exact path="/:id/state" element={<StateChart />}></Route>
         <Route
           exact

@@ -6,7 +6,7 @@ function Home({ currentData }) {
     return <StateCard key={item.fips} item={item} />;
   });
 
-  console.log(stateList);
+  console.log(currentData);
 
   return (
     <div className="home">

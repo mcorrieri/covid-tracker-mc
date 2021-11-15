@@ -1,11 +1,24 @@
 import React from "react";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend } from "recharts";
 
-function UsChart() {
+function UsChart({ usData }) {
+  let listOfDates = usData.map((day) => {
+    return day.date;
+  });
+
+  const recentDates = listOfDates.slice(-30);
+  console.log(recentDates);
+
+  let listofCases = usData.map((day) => {
+    return day.cases;
+  });
+
+  const recentCases = listofCases.slice(-30);
+  console.log(recentCases);
+
   const data = [
-    { Date: "Oct 10", Cases: 200, pv: 2400, amt: 2400 },
-    { Date: "Oct 11", Cases: 600, pv: 2400, amt: 2400 },
-    { Date: "Oct 12", Cases: 800, pv: 4000, amt: 2400 },
+    { Date: recentDates, Cases: recentCases, pv: 2400, amt: 2400 },
+    // { Date: "Oct 12", Cases: 800, pv: 4000, amt: 2400 },
   ];
 
   const renderLineChart = (

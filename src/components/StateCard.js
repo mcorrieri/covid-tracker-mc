@@ -16,7 +16,6 @@ function StateList({ item }) {
       .then((stateData) => setStateData(stateData));
     navigate("/:id/state");
   }
-  console.log(stateData);
 
   return (
     <div className="cards">
