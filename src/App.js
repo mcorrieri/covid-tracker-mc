@@ -33,6 +33,9 @@ function App() {
   }
   // console.log(usData);
 
+  //add a sidebar, maybe have a list of variants including name, info, first found, link to resources, 
+  //location setting? google maps to find nearest location for vaccine?
+
   return (
     <div className="App">
       <Routes>
