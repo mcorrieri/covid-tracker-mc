@@ -21,9 +21,21 @@ function Home({ currentData }) {
     setDrawerOpen(null);
   };
 
+  const handleOmicron = () => {
+    window.open("https://www.who.int/news/item/28-11-2021-update-on-omicron");
+  };
+
+  const handleDelta = () => {
+    window.open(
+      "https://www.cdc.gov/coronavirus/2019-ncov/variants/delta-variant.html"
+    );
+  };
+
   return (
     <div className="home">
       <div>
+        <h2 className="header">COVID TRACKER</h2>
+        <h3>Current Case and Death Totals By State:</h3>
         <Button
           id="basic-button"
           aria-controls="basic-menu"
@@ -31,7 +43,7 @@ function Home({ currentData }) {
           aria-expanded={open ? "true" : undefined}
           onClick={handleClick}
         >
-          Covid Variants
+          Covid Alerts
         </Button>
         <Menu
           id="basic-menu"
@@ -42,12 +54,10 @@ function Home({ currentData }) {
             "aria-labelledby": "basic-button",
           }}
         >
-          <MenuItem onClick={handleClose}>Omicron</MenuItem>
-          <MenuItem onClick={handleClose}>Delta</MenuItem>
+          <MenuItem onClick={handleOmicron}>Omicron</MenuItem>
+          <MenuItem onClick={handleDelta}>Delta</MenuItem>
         </Menu>
       </div>
-      <h2 className="header">COVID TRACKER</h2>
-      <h3>Current Case and Death Totals By State:</h3>
       <ul className="card-list">{stateList}</ul>
     </div>
   );
