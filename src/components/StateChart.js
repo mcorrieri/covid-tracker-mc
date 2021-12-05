@@ -1,9 +1,12 @@
 import React from "react";
 
-function StateChart() {
+function StateChart({ stateData }) {
+  const { state, cases, data, deaths } = stateData;
+  console.log(stateData);
+
   return (
     <div>
-      <h2>State:</h2>
+      <h2>State: {state}</h2>
     </div>
   );
 }

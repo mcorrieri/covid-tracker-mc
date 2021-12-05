@@ -8,14 +8,12 @@ function StateList({ item }) {
   const [stateData, setStateData] = useState([]);
   const navigate = useNavigate();
 
-  async function fetchStateData() {
-    const response = await fetch(
-      `https://disease.sh/v3/covid-19/nyt/states/${item.state}?lastdays=30`
-    )
-      .then((res) => res.json())
-      .then((stateData) => setStateData(stateData));
-    navigate("/:id/state");
-  }
+  let cases = item.cases.toLocaleString();
+  let deaths = item.deaths.toLocaleString();
+
+  const handleHistory = () => {
+    navigate("/state");
+  };
 
   return (
     <div className="cards">
@@ -25,11 +23,11 @@ function StateList({ item }) {
             {item.state}
           </Typography>
           <Typography>Date: {item.date}</Typography>
-          <Typography>Cases: {item.cases}</Typography>
-          <Typography>Deaths: {item.deaths}</Typography>
+          <Typography>Cases: {cases}</Typography>
+          <Typography>Deaths: {deaths}</Typography>
         </CardContent>
         <CardActions>
-          <Button onClick={fetchStateData} size="small">
+          <Button onClick={handleHistory} size="small">
             See History
           </Button>
         </CardActions>
