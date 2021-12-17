@@ -3,13 +3,10 @@ import StateCard from "./StateCard";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Input } from "@mui/material";
 
 function Home({ stateData }) {
   const [drawerOpen, setDrawerOpen] = useState(null);
   const open = Boolean(drawerOpen);
-  const [search, setSearch] = useState("");
-  const [searchParam] = useState("state");
 
   let stateList = stateData.map((item) => {
     return <StateCard key={item.fips} item={item} />;
@@ -32,16 +29,6 @@ function Home({ stateData }) {
     window.open(
       "https://www.cdc.gov/coronavirus/2019-ncov/variants/delta-variant.html"
     );
-  };
-
-  const handleSearch = (e) => {
-    let value = e.target.value.toLowerCase();
-
-    let result = [];
-
-    result = stateData.filter((stateName) => {
-      return stateName.state.search(value) != -1;
-    });
   };
 
   return (
@@ -71,16 +58,7 @@ function Home({ stateData }) {
           <MenuItem onClick={handleDelta}>Delta</MenuItem>
         </Menu>
       </div>
-      <div className="search-wrapper">
-        <label>Search: </label>
-        <Input
-          type="search"
-          className="search-form"
-          value={handleSearch}
-          placeholder="Search..."
-          onChange={(e) => e.target.value}
-        />
-      </div>
+
       <ul className="card-list">{stateList}</ul>
     </div>
   );

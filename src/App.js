@@ -7,6 +7,7 @@ import Splash from "./components/Splash";
 import UsChart from "./components/UsChart";
 import NotFound from "./components/NotFound";
 import StateChart from "./components/StateChart";
+import Search from "./components/Search";
 
 function App() {
   const [stateData, setStateData] = useState([]);
@@ -38,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/welcome" element={<Splash />}></Route>
+        <Route exact path="/" element={<Splash />}></Route>
         <Route
           exact
           path="/uschart"
@@ -49,7 +50,11 @@ function App() {
           path=":state"
           element={<StateChart stateData={stateData} />}
         ></Route>
-        <Route exact path="/" element={<Home stateData={stateData} />}></Route>
+        <Route
+          exact
+          path="/home"
+          element={[<Search />, <Home stateData={stateData} />]}
+        ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />

@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-.splash {
+.splash-container {
   display: flex;
   flex-direction: column;
   padding: 70px;
@@ -57,4 +57,18 @@ code {
 
 .recharts-wrapper {
   display: contents;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+}
+
+.corona-gif {
+  display: flex;
+  width: 350px;
+  border-radius: 4%;
+  opacity: 0.8;
 }
