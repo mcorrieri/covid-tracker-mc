@@ -53,7 +53,7 @@ function App() {
         <Route
           exact
           path="/home"
-          element={[<Search />, <Home stateData={stateData} />]}
+          element={[<Search />, <Home stateData={stateData} usData={usData} />]}
         ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

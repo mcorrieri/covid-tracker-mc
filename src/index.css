@@ -72,3 +72,11 @@ code {
   border-radius: 4%;
   opacity: 0.8;
 }
+
+.corona-gif:hover {
+  opacity: 1;
+}
+
+.footer {
+  color: whitesmoke;
+}

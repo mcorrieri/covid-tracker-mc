@@ -1,9 +1,12 @@
 import React from "react";
+import Input from "@mui/material/Input";
 
 const Search = () => {
   return (
-    <div>
-      <h1>Search</h1>
+    <div className="search-container">
+      <form>
+        <Input type="text" placeholder="Search States..." />
+      </form>
     </div>
   );
 };

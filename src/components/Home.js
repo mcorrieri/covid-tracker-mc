@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-function Home({ stateData }) {
+function Home({ stateData, usData }) {
   const [drawerOpen, setDrawerOpen] = useState(null);
   const open = Boolean(drawerOpen);
 
@@ -12,7 +12,9 @@ function Home({ stateData }) {
     return <StateCard key={item.fips} item={item} />;
   });
 
-  console.log(stateData);
+  const mostRecentDate = usData.pop();
+
+  console.log(usData);
 
   const handleClick = (event) => {
     setDrawerOpen(event.currentTarget);
@@ -35,7 +37,10 @@ function Home({ stateData }) {
     <div className="home">
       <div>
         <h2 className="header">COVID TRACKER</h2>
-        <h3>Current Case and Death Totals By State:</h3>
+        <h3>
+          Date: {mostRecentDate.date}: US Cases: {mostRecentDate.cases} Deaths:{" "}
+          {mostRecentDate.deaths}
+        </h3>
         <Button
           id="basic-button"
           aria-controls="basic-menu"
