@@ -12,20 +12,21 @@ import Search from "./components/Search";
 function App() {
   const [stateData, setStateData] = useState([]);
   const [usData, setUsData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetchStateData();
     fetchUStotal();
   }, []);
 
-  async function fetchStateData() {
-    await fetch("https://disease.sh/v3/covid-19/nyt/states?lastdays=2")
+  function fetchStateData() {
+    fetch("https://disease.sh/v3/covid-19/nyt/states?lastdays=2")
       .then((response) => response.json())
       .then((data) => setStateData(data));
   }
 
-  async function fetchUStotal() {
-    await fetch("https://disease.sh/v3/covid-19/nyt/usa")
+  function fetchUStotal() {
+    fetch("https://disease.sh/v3/covid-19/nyt/usa")
       .then((response) => response.json())
       .then((data) => setUsData(data));
   }
@@ -54,8 +55,17 @@ function App() {
             exact
             path="/home"
             element={[
-              <Search />,
-              <Home stateData={stateData} usData={usData} />,
+              <Search
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                stateData={stateData}
+                setStateData={setStateData}
+              />,
+              <Home
+                stateData={stateData}
+                usData={usData}
+                searchTerm={searchTerm}
+              />,
             ]}
           ></Route>
           <Route path="*" element={<NotFound />}></Route>

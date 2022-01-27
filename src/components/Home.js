@@ -4,18 +4,18 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-function Home({ stateData, usData }) {
+function Home({ stateData, usData, searchTerm }) {
   const [drawerOpen, setDrawerOpen] = useState(null);
   const open = Boolean(drawerOpen);
+  const mostRecentDate = usData.at(-1);
 
-  let stateList = stateData.map((item) => {
-    return <StateCard key={item.fips} item={item} />;
+  let stateList = stateData.map((item, index) => {
+    return <StateCard key={index} item={item} />;
   });
 
-  //Issue:when click on "COVID ALERTS, sets most recent data to previous day???"
-  const mostRecentDate = usData.pop();
-
-  // console.log(usData);
+  const results = stateData.filter((state) => {
+    return state.state.toLowerCase().includes(searchTerm);
+  });
 
   const handleClick = (event) => {
     setDrawerOpen(event.currentTarget);
@@ -67,6 +67,7 @@ function Home({ stateData, usData }) {
       </div>
 
       <ul className="card-list">{stateList}</ul>
+      {console.log("RESULTS", results)}
     </div>
   );
 }
