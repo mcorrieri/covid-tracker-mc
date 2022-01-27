@@ -12,9 +12,10 @@ function Home({ stateData, usData }) {
     return <StateCard key={item.fips} item={item} />;
   });
 
+  //Issue:when click on "COVID ALERTS, sets most recent data to previous day???"
   const mostRecentDate = usData.pop();
 
-  console.log(usData);
+  // console.log(usData);
 
   const handleClick = (event) => {
     setDrawerOpen(event.currentTarget);
@@ -38,8 +39,9 @@ function Home({ stateData, usData }) {
       <div>
         <h2 className="header">COVID TRACKER</h2>
         <h3>
-          Date: {mostRecentDate.date}: US Cases: {mostRecentDate.cases} Deaths:{" "}
-          {mostRecentDate.deaths}
+          Date: {mostRecentDate.date}
+          <br></br> US Cases: {mostRecentDate.cases.toLocaleString()} <br></br>{" "}
+          Deaths: {mostRecentDate.deaths.toLocaleString()}
         </h3>
         <Button
           id="basic-button"

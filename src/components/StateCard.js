@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "@mui/material/Card";
 import { Button, CardActions, CardContent, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function StateList({ item }) {
   // const { state, cases, date, deaths } = item;
-  const [stateData, setStateData] = useState([]);
   const navigate = useNavigate();
 
   let cases = item.cases.toLocaleString();
