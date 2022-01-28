@@ -61,8 +61,22 @@ function Home({ stateData, usData, searchTerm }) {
             "aria-labelledby": "basic-button",
           }}
         >
-          <MenuItem onClick={handleOmicron}>Omicron</MenuItem>
-          <MenuItem onClick={handleDelta}>Delta</MenuItem>
+          <MenuItem onClick={handleOmicron}>
+            Omicron
+            <img
+              style={{ height: 15, marginLeft: ".5rem" }}
+              src="https://i.stack.imgur.com/IadAX.png"
+              alt="new tab"
+            />
+          </MenuItem>
+          <MenuItem onClick={handleDelta}>
+            Delta
+            <img
+              style={{ height: 15, marginLeft: ".5rem" }}
+              src="https://i.stack.imgur.com/IadAX.png"
+              alt="new tab"
+            />
+          </MenuItem>
         </Menu>
       </div>
 

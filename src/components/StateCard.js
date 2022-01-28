@@ -18,7 +18,7 @@ function StateList({ item }) {
     <div className="cards">
       <Card className="card" sx={{ maxWidth: 275 }} variant="outlined">
         <CardContent>
-          <Typography color="GrayText" sx={{ fontSize: 20 }}>
+          <Typography color={"purple"} sx={{ fontSize: 20 }}>
             {item.state}
           </Typography>
           <Typography>Date: {item.date}</Typography>
